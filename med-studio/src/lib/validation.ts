@@ -16,12 +16,12 @@ export const robloxConnectionSchema = z.discriminatedUnion("targetType", [
   z.object({
     targetType: z.literal("CREATOR"),
     robloxUserId: z.string().regex(/^\d+$/, "Roblox User ID harus berupa angka saja."),
-    apiKey: z.string().min(10, "API Key terlalu pendek (minimal 10 karakter). Pastikan kamu copy key lengkap dari Roblox Creator Dashboard.").max(512),
+    apiKey: z.string().min(10, "API Key terlalu pendek (minimal 10 karakter). Pastikan kamu copy key lengkap dari Roblox Creator Dashboard.").max(5000),
   }),
   z.object({
     targetType: z.literal("GROUP"),
     robloxGroupId: z.string().regex(/^\d+$/, "Roblox Group ID harus berupa angka saja."),
-    apiKey: z.string().min(10, "API Key terlalu pendek (minimal 10 karakter). Pastikan kamu copy key lengkap dari Roblox Creator Dashboard.").max(512),
+    apiKey: z.string().min(10, "API Key terlalu pendek (minimal 10 karakter). Pastikan kamu copy key lengkap dari Roblox Creator Dashboard.").max(5000),
   }),
 ]);
 
